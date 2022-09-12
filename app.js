@@ -39,8 +39,8 @@ app.use(function(err, req, res, next) {
   res.status(err.status || 500);
   res.render('error');
 });
-
-mongoose.connect('mongodb+srv://root:root@cluster0.nsqnm.mongodb.net/PythonBasicsDB?retryWrites=true&w=majority', { useNewUrlParser: true, useUnifiedTopology: true})
+//MongoDB was not use after all, so MongoDB has been deleted
+mongoose.connect('MongoDB URL', { useNewUrlParser: true, useUnifiedTopology: true})
     .then(() => {
         app.listen(5000, () => {
             console.log('MongoDB Atlas connection success... and Express server is running');
