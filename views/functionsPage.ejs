@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= pageTitle %></title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-uWxY/CJNBR+1zjPWmfnSnVxwRheevXITnMqoEIeG1LJrdI0GlVs/9cVSyPYXdcSF" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-kQtW33rZJAHjgefvhyyzcGF3C5TFyBQBA13V1RKPf4uH+bwyzQxZ6CmMZHmNBEfJ" crossorigin="anonymous"></script>
+    
+<link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+
+    <div class="row">
+
+      <div class="col-md-3">
+    <nav id="navbar-example3" class="navbar navbar-light bg-light flex-column align-items-stretch p-3" style="position:fixed; top:0px; left:0px;">
+      <a class="navbar-brand" href="#">Functions</a>
+      <nav class="nav flex-column">
+        <a class="nav-link" href="#item-1">Scope</a>
+        <a class="nav-link" href="#item-2">Suppling Arguments</a>
+        <a class="nav-link" href="#item-3">Returning Values</a>
+        <a class="nav-link" href="#item-4">Callbacks</a>
+        <a class="nav-link" href="#item-5">Placeholders</a>
+        <!--<a class="nav-link" href="#item-6">Producing Generators</a>-->
+        <a class="nav-link" href="#item-7">Handling Exceptions</a>
+      </nav>
+    </nav>
+  </div>
+    
+  <div class="col-md-8">
+    <div data-bs-spy="scroll" data-bs-target="#navbar-example3" data-bs-offset="0" tabindex="0">
+
+      <h4 id="item-1">Scope</h4>
+      <p>A Scope is when a variable is only available from inside the region it is created. There are two types of scopes, Local and Global.
+        A Local Scope has a variable created inside a function that belongs to the local scope of that function, and can only be used inside that function.
+        An Global Scope has a variable created in the main body of the Python code is a global variable and belongs to the Global scope.
+        Global variables are available from within any scope, Global and Local. If you operate with the same variable name inside and outside of a function, 
+        Python will treat them as two separate variables, one available in the global scope (outside the function) and one available in the local scope (inside the function).</p>
+        <div style="background-color:black; width:20em;">
+        <codeSample>x = 300<br>
+                    def localfunc():<br>
+                    &emsp;x = 200<br>
+                    &emsp;print "Local X:", x <br>
+                    #Function will print the local x<br>
+                    localfunc()<br>
+                    #Print the global x<br>
+                    print "Global X:", x </codeSample>
+        </div>
+        <div style="background-color:black; border-top: 3px solid rgb(136, 116, 116); width:20em;">
+        <output>Local X: 200<br>
+                Global X: 300</output>
+        </div>
+      
+      <h4 id="item-2">Suppling Arguments</h4>
+      <p>When defining a custom function in Python programming you may, optionally, specify an“argument” name between the function’s parentheses. A value can then be passed to that argument 
+        by specifying the value in the parentheses of the call to the function. The function can now use that passed in value during its execution by referencing it via the argument name.</p>
+        <div style="background-color:black; width:40em;">
+        <codeSample>#Defining a function to accept an argument to print out a string<br>
+                    def echo( user ):<br>
+                    &emsp;print "User:", user<br>
+                    #Function is call with specific value to be passed to the argument<br>
+                    echo('Bob')<br>
+                    #Multiple arguments by including a comma-separated list of argument<br>
+                    def person( user , lang , state ):<br>
+                    &emsp;print "User:", user , "Language:", lang , "State:", state<br>
+                    #Function is call with the same number of data values as arguments<br>
+                    person('Bob','English','TX')</codeSample>
+        </div>
+        <div style="background-color:black; border-top: 3px solid rgb(136, 116, 116); width:40em;">
+        <output>User: Bob<br>
+                User: Bob Language: English State: TX</output>
+        </div>
+
+      <h4 id="item-3">Returning values</h4>
+      <p>Typically, a <B>return</B> statement will appear at the very end of a function block to return the final result 
+        of executing all statements contained in that function. A <B>return</B> statement may, however, appear earlier in 
+        the function block to halt the execution of all subsequent statements in that block. This immediately resumes 
+        the execution of the program at the caller. Optionally, the <B>return</B> statement may specify a value to be returned 
+        to the caller or the value may be omitted. Where no value is specified, a default value of none is assumed.</p>
+        <div style="background-color:black; width:45em;">
+        <codeSample>def sum( a , b ):<br>
+                    &emsp;&emsp;return a + b<br>
+                    #Returned result is assigned to a variable by the caller for subsequent use<br>
+                    total = sum(5,2)<br>
+                    print"Total by assign:", total<br>
+                    #Returned result can be used directly “in-line”<br>
+                    print "Total by in-line:", sum(5,3)</codeSample>
+        </div>
+        <div style="background-color:black; border-top: 3px solid rgb(136, 116, 116); width:45em;">
+        <output>Total by assign: 7<br>
+                Total by in-line: 8</output>
+        </div>
+
+      <h4 id="item-4">Callbacks</h4>
+      <p>A callback is a function that is passed as an argument to another function. 
+        This other function is expected to call this callback function in its definition. The point at which other 
+        function calls our callback function depends on the requirement and nature of the other function.</p>
+        <div style="background-color:black; width:35em;">
+        <codeSample>def square2( x ):<br>
+                    &emsp;&emsp;return x ** 2<br>
+                    def square3( x ):<br>
+                    &emsp;return x ** 3<br>
+                    #Create a list of callbacks to each of the functions<br>
+                    callbacks = [square2, square3]<br>
+                    print "Number square by 2 and 3"<br>
+                    #Display the result of passing a value of each functions<br>
+                    for square in callbacks:<br>
+                    &emsp;print "Result:", square(3)</codeSample>
+        </div>
+        <div style="background-color:black; border-top: 3px solid rgb(136, 116, 116); width:35em;">
+        <output>Number square by 2 and 3<br>
+                Result: 9<br>
+                Result: 27</output>
+        </div>
+
+      <h4 id="item-5">Placeholders</h4>
+      <p>The Python <B>pass</B> keyword is useful when writing program code as a temporary placeholder that can be inserted 
+        into the code at places where further code needs to be added later. The <B>pass</B> keyword is inserted where a statement 
+        is required syntactically but it merely performsa “null” operation – when it is executed nothing happens and no code needs 
+        to be executed. This allows an incomplete program to be executed for testing by simulating correct syntax so the interpreter does not report errors.</p>
+        <div style="background-color:black; width:35em;">
+        <codeSample>bool = True<br>
+                    if bool:<br>
+                    &emsp;print "Python IDE"<br>
+                    #The program execute as the interpreter will not find an error<br>
+                    else:<br>
+                    &emsp;Pass</codeSample>
+        </div>
+        <div style="background-color:black; border-top: 3px solid rgb(136, 116, 116); width:35em;">
+        <output>Python IDE</output>
+        </div>
+
+      <h4 id="item-7">Handling Exceptions</h4>
+      <p>Sections of a Python script in which it is possible to anticipate errors, such as those handling user input, can be enclosed in a <B>try except</B>
+        block to handle “exception errors”. The statements to be executed are grouped in a <B>try :</B> block and exceptions are passed to the ensuing
+       <B>except :</B> block for handling.</p>
+        <div style="background-color:black; width:35em;">
+        <codeSample>title = "Python IDE"<br>
+                    #Attempts to display the variable value but its incorrect<br>
+                    try:<br> 
+                    &emsp;print titel<br>
+                    #Except statement block to display an error message<br>
+                    except NameError as msg:<br>
+                    &emsp;print msg </codeSample>
+        </div>
+        <div style="background-color:black; border-top: 3px solid rgb(136, 116, 116); width:35em;">
+        <output>NameError: name 'titel' is not defined on line 4</output>
+        </div>
+      
+    </div>
+    </div>
+
+  </div>
+      
+ <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/js/bootstrap.min.js" integrity="sha384-PsUw7Xwds7x08Ew3exXhqzbhuEYmA2xnwc8BuD6SEr+UmEHlX8/MCltYEodzWA4u" crossorigin="anonymous"></script>
+  
+   </body>
+</html>

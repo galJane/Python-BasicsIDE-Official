@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title><%= pageTitle %></title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-uWxY/CJNBR+1zjPWmfnSnVxwRheevXITnMqoEIeG1LJrdI0GlVs/9cVSyPYXdcSF" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-kQtW33rZJAHjgefvhyyzcGF3C5TFyBQBA13V1RKPf4uH+bwyzQxZ6CmMZHmNBEfJ" crossorigin="anonymous"></script>
+    
+<link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+
+    <div class="row">
+
+      <div class="col-md-3">
+    <nav id="navbar-example3" class="navbar navbar-light bg-light flex-column align-items-stretch p-3" style="position:fixed; top:0px; left:0px;">
+      <a class="navbar-brand" href="#">Control Flow</a>
+      <nav class="nav flex-column">
+        <a class="nav-link" href="#item-1">if statement </a>
+        <a class="nav-link" href="#item-2">Looping while true</a>
+        <a class="nav-link" href="#item-3">Looping over items</a>
+        <a class="nav-link" href="#item-4">Breaking out of a loop</a>
+      </nav>
+    </nav>
+  </div>
+    
+  <div class="col-md-8">
+    <div data-bs-spy="scroll" data-bs-target="#navbar-example3" data-bs-offset="0" tabindex="0">
+
+      <h4 id="item-1">if statement</h4>
+      <p>An if statement is a structure for decision making in Python. Python can execute line(s) of code based on a condition (sometimes this is called conditional statement)
+
+        By default Python runs lines of code sequentially, first line 1, then line 2, then line 3 etcetera. By using an if statement you can change this.</p>
+       <br>
+       <p>most basic form of an if statement is:</p> 
+
+        <div style="background-color:black; width:20em;">
+        <codeSample>if x > 0  <br>
+                    &emsp;&emsp;print 'x is greater than 0' <br>
+                    </codeSample>
+        </div>
+        <div style="background-color:black; border-top: 3px solid rgb(136, 116, 116); width:20em;">
+        <output>x is greater than 0</output>
+        </div>
+      <br>
+
+      <h4 id="item-2">Looping while true</h4>
+      <p>While loop is used to execute a block of code repeatedly until given
+         boolean condition evaluated to False. If we write while True then the 
+         loop will run forever.</p>
+        <div style="background-color:black; width:30em;">
+        <codeSample>x = 10<br>
+                    Sum = 0  <br>
+                    if N == 0: <br>
+                    break <br>
+                    print "Sum of First 10 Numbers is {Sum}" </codeSample>
+        </div>
+        <div style="background-color:black; border-top: 3px solid rgb(136, 116, 116); width:30em;">
+        <output>Sum of First 10 Numbers is 55</output>
+        </div>
+        <br>
+
+
+      <h4 id="item-3">Looping over items</h4>
+      <p>You can loop through the list of items in python using for loop, 
+        while loop or enumerate. We will go through each of them and their 
+        variations with examples.<br>
+        In this tutorial, we shall go through some of the processes to loop 
+        through items in a list, with well detailed Python programs.<br>
+        Lets recall that list is a collection of items that can be of different 
+        datatypes. For the examples mentioned below, we will consider the following 
+        list. <br> 
+        a = [52, 85, 41, 'sum', 'str', 3 + 5j, 6.8]
+        <br>
+        <br>
+        In the following example, we will use Python While Loop to iterate 
+        through all the items in given list, and print them.
+      </p>
+        <div style="background-color:black; width:40em;">
+        <codeSample>a = [52, 85, 41, 'sum', 'str', 3 + 5j, 6.8]<br>
+                     i = 0<br>
+                     while i < (len(a))
+                     <br>
+                     &emsp;print (a[i]) <br>
+                     &emsp;i+=1)</codeSample>
+        </div>
+        <div style="background-color:black; border-top: 3px solid rgb(136, 116, 116); width:40em;">
+        <output>52 <br>
+                85 <br>
+                41 <br>
+                sum <br>
+                str <br>
+              (3+5j) <br>
+                6.8</output>
+        </div>
+        <br>
+
+      <h4 id="item-4">Breaking out of a loop</h4>
+      <p>Python's break statement allows you to exit the nearest enclosing while or 
+        for loop. Often you'll break out of a loop based on a particular condition, 
+        like in the following example:</p>
+        <div style="background-color:black; width:20em;">
+        <codeSample>s = 'Hello, World!' <br>
+                    for char in s:<br>
+                    &emsp;print(char)<br>
+                    if char == ',':<br>
+                    &emsp;break</codeSample>
+        </div>
+        <div style="background-color:black; border-top: 3px solid rgb(136, 116, 116); width:20em;">
+        <output>H<br>
+                e<br>
+                l<br>
+                l<br>
+                o<br>
+                ,</output>
+        </div>
+      
+    </div>
+    </div>
+
+  </div>
+
+ <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/js/bootstrap.min.js" integrity="sha384-PsUw7Xwds7x08Ew3exXhqzbhuEYmA2xnwc8BuD6SEr+UmEHlX8/MCltYEodzWA4u" crossorigin="anonymous"></script>
+  
+   </body>
+</html>

@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= pageTitle %></title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-uWxY/CJNBR+1zjPWmfnSnVxwRheevXITnMqoEIeG1LJrdI0GlVs/9cVSyPYXdcSF" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-kQtW33rZJAHjgefvhyyzcGF3C5TFyBQBA13V1RKPf4uH+bwyzQxZ6CmMZHmNBEfJ" crossorigin="anonymous"></script>
+    
+<link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+     
+    <div class="row">
+
+      <div class="col-md-3">
+    <nav id="navbar-example3" class="navbar navbar-light bg-light flex-column align-items-stretch p-3" style="position:fixed; top:0px; left:0px;">
+      <a class="navbar-brand" href="#">Modules</a>
+      <nav class="nav flex-column">
+        <a class="nav-link" href="#item-3">Mathematics</a>
+        <a class="nav-link" href="#item-4">Calculating Decimals</a>
+        <a class="nav-link" href="#item-5">Time</a>
+        <a class="nav-link" href="#item-6">Timer</a>
+        <a class="nav-link" href="#item-7">Patterns</a>
+      </nav>
+    </nav>
+  </div>
+  <div class="col-md-8">
+  <div data-bs-spy="scroll" data-bs-target="#navbar-example3" data-bs-offset="0" tabindex="0">
+
+      <h4 id="item-3">Mathematics</h4>
+      <p>Python has a set of built-in math functions, including an extensive math module, 
+        that allows you to perform mathematical tasks on numbers.</p>
+        <div style="background-color:black; width:20em;">
+        <codeSample>print 1 + 5</codeSample>
+        </div>
+        <div style="background-color:black; border-top: 3px solid rgb(136, 116, 116); width:20em;">
+        <output>6 </output>
+        <br>
+        <div>
+        </div>
+      </div>
+
+          <p>Instead of passing integers directly into the print statement, 
+            we can initialize variables to stand for integer values:
+          </p>
+        
+          <div style="background-color:black; width:20em;">
+            <codeSample>a = 88 <br>
+                    b = 103<br>
+                    print a + b </codeSample><br>
+                    <div style="background-color:black; border-top: 3px solid rgb(136, 116, 116); width:20em;">
+        <output>191</output>
+      </div>
+</div>
+        <br>
+        <p>The % operator is the modulo, which returns the remainder rather 
+          than the quotient after division. This is useful for finding numbers
+           that are multiples of the same number, for example.
+        </p>
+
+        <div style="background-color:black; width:20em;">
+        <codeSample>o = 85<br>
+                    p = 15<br>
+                    print o % p </codeSample><br>
+                    <div style="background-color:black; border-top: 3px solid rgb(136, 116, 116); width:20em;">
+                    <output>10</output>
+        </div>
+        </div>
+      <h4 id="item-4">Calculating Decimals</h4>
+      <p>By default, Python interprets any number that includes a decimal point 
+        as a double precision floating point number. The Decimal is a floating 
+        decimal point type which more precision and a smaller range than the 
+        float. It is appropriate for financial and monetary calculations. It 
+        is also closer to the way how humans work with numbers.</p>
+        <p>Some values cannot be exactly represented in a float data type. For instance,
+           storing the 0.1 value in float (which is a binary floating point value)
+            variable we get only an approximation of the value. Similarly, the 1/3 
+            value cannot be represented exactly in decimal floating point type.</p><br>
+            <p>The Decimal has a default precision of 28 places, while the float 
+              has 18 places.</p>
+        <div style="background-color:black; width:20em;">
+        <codeSample>x = 1 / 3<br>
+                    print type(x)<br>
+                    print x <br>
+                    print "-----------------------" <br>
+                    y = Decimal(1) / Decimal(3)<br>
+                    print type(y)<br>
+                    print y</codeSample>
+        </div>
+        <div style="background-color:black; border-top: 3px solid rgb(136, 116, 116); width:20em;">
+        <output>./defprec.py <br>
+              class float <br>
+            0.3333333333333333<br>
+            -----------------------<br>
+            class 'decimal.Decimal'<br>
+              "class float" <br>
+                0.3333333333333333333333333333</output>
+        </div>
+
+      <h4 id="item-5">Time</h4>
+      <p>To be able to work with time in Python, you need to first import the module:</p>
+        <div style="background-color:black; width:35em;">
+        <codeSample>import time <br>
+                   #The most basic function in the Python time module is time():<br>
+                   #Example <br>
+                   seconds = time.time()<br>
+                   print "It's", seconds, "seconds."</codeSample>
+                  <p>This will return a floating value</p>
+        </div>
+        <div style="background-color:black; border-top: 3px solid rgb(136, 116, 116); width:35em;">
+        <output>It's 1637721785.8984067 seconds.</output> 
+        <br>
+        <p>Python printing local time</p>
+        <codeSample>import time <br>
+          <p>local_time = time.ctime(seconds)</p>
+          <codeSample>#Example <br>
+            print "Local time:", local_time</codeSample>
+            <output>Local time: Thu Dec 27 15:49:29 2018</output> 
+        </div>
+
+      <h4 id="item-6">Timer</h4>
+      <p>Python Timer is a class/library to manage the time complexity of your code. 
+        There are different types of timer implementations in python according to user 
+        needs, namely, python timer function python countdown timer and basic python time module.
+        Python Countdown Timer comes into the picture as the same can be utilized to wait for a 
+        certain duration of time in the idle state before reiterating the same piece of code in 
+        the loop again as required.
+      </p>
+        <div style="background-color:black; width:30em;">
+        <codeSample>import time as t<br>
+                    seconds = int(input("How many seconds to wait"))<br>
+                    for i in range(seconds):<br>
+                    &emsp;print str(seconds-i) + " seconds remaining \n"<br>
+                    &emsp;t.sleep(1)<br>
+                    print "Time is up"</codeSample>
+        </div>
+        <div style="background-color:black; border-top: 3px solid rgb(136, 116, 116); width:30em;">
+        <output>How many seconds to wait 10 <br>
+                10 seconds remaining <br>
+                9 seconds remaining <br>
+                8 seconds remaining <br>
+                7 seconds remaining <br>
+                6 seconds remaining <br>
+                5 seconds remaining <br>
+                4 seconds remaining <br>
+                3 seconds remaining <br>
+                2 seconds remaining <br>
+                1 seconds remaining <br>
+                Time is up</output>
+        </div>
+
+      <h4 id="item-7">Patterns</h4>
+      <p>In python, patterns can be created by using for loops</p>
+        <div style="background-color:black; width:30em;">
+        <codeSample> #The star pattern
+                    for i in range(0, 5):<br>
+                    &emsp;for j in range(0, i+1):<br>
+                    &emsp;&emsp;print "* ",end=""<br>
+                    &emsp;&emsp;print()</codeSample>
+        </div>
+        <div style="background-color:black; border-top: 3px solid rgb(136, 116, 116); width:30em;">
+        <output>* <br>
+                * *<br>
+                * * *<br>
+                * * * *<br>
+                * * * * *</output>
+        </div>
+      
+    </div>
+    </div>
+
+  </div>
+      
+ <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/js/bootstrap.min.js" integrity="sha384-PsUw7Xwds7x08Ew3exXhqzbhuEYmA2xnwc8BuD6SEr+UmEHlX8/MCltYEodzWA4u" crossorigin="anonymous"></script>
+  
+   </body>
+</html>

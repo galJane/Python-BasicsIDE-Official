@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= pageTitle %></title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-uWxY/CJNBR+1zjPWmfnSnVxwRheevXITnMqoEIeG1LJrdI0GlVs/9cVSyPYXdcSF" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-kQtW33rZJAHjgefvhyyzcGF3C5TFyBQBA13V1RKPf4uH+bwyzQxZ6CmMZHmNBEfJ" crossorigin="anonymous"></script>
+    
+<link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+      
+    <div class="row">
+
+      <div class="col-md-3">
+    <nav id="navbar-example3" class="navbar navbar-light bg-light flex-column align-items-stretch p-3" style="position:fixed; top:0px; left:0px;">
+      <a class="navbar-brand" href="#">Data Structure</a>
+      <nav class="nav flex-column">
+        <a class="nav-link" href="#item-1">Writing Lists</a>
+        <a class="nav-link" href="#item-2">Manipulating Lists</a>
+        <a class="nav-link" href="#item-3">Tuple</a>
+        <a class="nav-link" href="#item-4">Set</a>
+        <a class="nav-link" href="#item-5">Dictionary</a>
+      </nav>
+    </nav>
+  </div>
+    
+  <div class="col-md-8">
+    <div data-bs-spy="scroll" data-bs-target="#navbar-example3" data-bs-offset="0" tabindex="0">
+
+      <h4 id="item-1">Writing Lists</h4>
+      <p>In Python, a list is created by placing elements inside square brackets [], separated by commas.
+        A list can have any number of items and they may be of different types (integer, float, string, etc.). 
+        A nested list is possible, which is when a list can also have another list as an item.</p>
+        <div style="background-color:black; width:45em;">
+        <codeSample># list of integers <br>
+                    mylist1 = [1, 2, 3] <br>
+                    <br>
+                    # empty list<br>
+                    mylist2 = [] <br>
+                    <br>
+                    # list with mixed data types<br>
+                    mylist3 = [1, "Hello", 3.4]<br>
+                    <br>
+                    # nested list<br>
+                    mylist4 = ["house", [8, 4, 6], ['a']]<br>
+                    <br>
+                    #Access a list value<br>
+                    print "First Value in list:" ,mylist1[0], "Second Value in list:" ,mylist1[1] </codeSample>
+        </div>
+        <div style="background-color:black; border-top: 3px solid rgb(136, 116, 116); width:45em;">
+        <output>First Value in list: 1 Second Value in list: 2</output>
+        </div>
+      
+      <h4 id="item-2">Manipulating Lists</h4>
+      <p>List variables, which can contain multiple items of data, are widely used in Python programmingand have a number
+         of “methods” that can be “dot-suffixed” to the list namefor manipulation:<br>
+         list.append(x) : Adds item x to the end of the list<br>
+         list.extend(L) : Adds all items in list L to the end of the list<br>
+         list.insert(i,x) : Inserts item x at index position i<br>
+         list.remove(x) : Removes first item x from the list<br>
+         list.pop(i) : Removes item at index position i and returns it<br>
+         list.index(x) : Returns the index position in the list of first item x<br>
+         list.count(x) : Returns the number of times x appears in the list<br>
+         list.sort() : Sort all list items, in place<br>
+         list.reverse() : Reverse all list items, in place</p>
+        <div style="background-color:black; width:25em;">
+        <codeSample>mylist1 = [1,2,3]<br>
+                    <br>
+                    mylist1.reverse()<br>
+                    print "Reverse Method Result:",mylist1<br>
+                    <br>
+                    mylist1.sort()<br>
+                    print "Sort Method Result:",mylist1<br>
+                    <br>
+                    mylist1.insert(3,4)<br>
+                    print "Insert Method Result:",mylist1<br>
+                    <br>
+                    mylist1.remove(3)<br>
+                    print "Remove Method Result:",mylist1<br>
+                    <br>
+                    mylist1.pop(1) #Using Index 1 <br>
+                    print "Pop Method Result:",mylist1</codeSample>
+        </div>
+        <div style="background-color:black; border-top: 3px solid rgb(136, 116, 116); width:25em;">
+        <output>Reverse Method Result: [3, 2, 1]<br>
+                Sort Method Result: [1, 2, 3]<br>
+                Insert Method Result: [1, 2, 3, 4]<br>
+                Remove Method Result: [1, 2, 4]<br>
+                Pop Method Result: [1, 4] </output>
+        </div>
+
+      <h4 id="item-3">Tuple</h4>
+      <p>A restrictive immutable Python list is known as a “tuple” and is created byassigning values
+         as a comma-separated list between parentheses in a process known as“tuple packing”. 
+         Tuples are unchangeable, so you cannot remove or change items from it, but you can delete the tuple completely.</p>
+        <div style="background-color:black; width:30em;">
+        <codeSample>tuple1 = (2015, 2023, 1997, 2000, 2013)<br>
+                    #Access the complete Tuple<br>
+                    print 'The Tuple is', tuple1<br>
+                    #Access a Tuple value<br>
+                    print 'The first value in the Tuple:', tuple1[0]<br>
+                    #Deleting a Tuple completely<br>
+                    del tuple1</codeSample>
+        </div>
+        <div style="background-color:black; border-top: 3px solid rgb(136, 116, 116); width:30em;">
+        <output>The Tuple is (2015, 2023, 1997, 2000, 2013)<br>
+                The first value in the Tuple: 2015</output>
+        </div>
+
+      <h4 id="item-4">Set</h4>
+      <p>A restrictive Python listof unique values is known as a “set” and is created by assigning values
+         as a comma-separated list between curly brackets (braces).</p>
+        <div style="background-color:black; width:30em;">
+        <codeSample>myset = {"apple", "banana", "cherry"}<br>
+                   <br>
+                   #Add a item to the Set<br>
+                   myset.add("orange")<br>
+                   print "Result of adding an item:", myset<br>
+                   <br>
+                   #Removes first value and returns it<br>
+                   print "Result of pop method:", myset.pop()<br>
+                   <br>
+                   #Removes value<br>
+                   myset.discard("banana")<br>
+                   print "Results of discard method:", myset</codeSample>
+        </div>
+        <div style="background-color:black; border-top: 3px solid rgb(136, 116, 116); width:30em;">
+        <output>Result of adding an item: {'apple', 'banana', 'cherry', 'orange'}<br>
+                Result of pop method: apple<br>
+                Results of discard method: {'cherry', 'orange'}</output>
+        </div>
+
+      <h4 id="item-5">Dictionary</h4>
+      <p>Dictionary in Python is an unordered collection of data values, used to store data values like a map,
+         which, unlike other Data Types that hold only a single value as an element, Dictionary holds key:value pair. 
+         Key-value is provided in the dictionary to make it more optimized. </p>
+        <div style="background-color:black; width:35em;">
+        <codeSample># empty dictionary<br>
+                    mydict1 = {}<br>
+                    <br>
+                    # dictionary with integer keys<br>
+                    mydict2 = {5: 'apple', 10: 'ball', 15:stick}<br>
+                    <br>
+                    # dictionary with mixed keys<br>
+                    mydict3 = {'name': 'John', 1: [2, 4, 3]}<br>
+                    #Access a Dictonary value<br>
+                    print 'First value in Dictionary:', mydict2[5] #Using the key 5 <br>
+                    <br>
+                    #Display all keys of Dictionary<br>
+                    print 'Keys:', mydict2.keys()<br>
+                    <br>
+                    #Deleting a pair<br>
+                    del mydict2[10]<br>
+                    print "Result of deleting a pair:", mydict2<br>
+                    <br>
+                    #Adding a pair<br>
+                    mydict2[25] = "love"<br>
+                    print "Result of adding a pair:", mydict2</codeSample>
+        </div>
+        <div style="background-color:black; border-top: 3px solid rgb(136, 116, 116); width:35em;">
+        <output>First value in Dictionary: apple<br>
+                Keys: [5, 10, 15]<br>
+                Result of deleting a pair: {5: 'apple', 15: 'stick'}<br>
+                Result of adding a pair: {5: 'apple', 15: 'stick', 25: 'love'}</output>
+        </div>
+      
+      
+    </div>
+    </div>
+
+  </div>
+
+ <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/js/bootstrap.min.js" integrity="sha384-PsUw7Xwds7x08Ew3exXhqzbhuEYmA2xnwc8BuD6SEr+UmEHlX8/MCltYEodzWA4u" crossorigin="anonymous"></script>
+  
+   </body>
+</html>

@@ -1,0 +1,151 @@
+  <!DOCTYPE html>
+  <html>
+    <head >
+        <title><%= pageTitle %></title>
+      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-uWxY/CJNBR+1zjPWmfnSnVxwRheevXITnMqoEIeG1LJrdI0GlVs/9cVSyPYXdcSF" crossorigin="anonymous">
+     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-kQtW33rZJAHjgefvhyyzcGF3C5TFyBQBA13V1RKPf4uH+bwyzQxZ6CmMZHmNBEfJ" crossorigin="anonymous"></script>
+
+  <link rel='stylesheet' href='/stylesheets/style.css' />
+    </head>
+    <body>
+
+      <div class="row">
+
+        <div class="col-md-3">
+      <nav id="navbar-example3" class="navbar navbar-light bg-light flex-column align-items-stretch p-3" style="position:fixed; top:0px; left:0px;">
+        <a class="navbar-brand" href="#">Operations</a>
+        <nav class="nav flex-column">
+          <a class="nav-link" href="#item-1">Input/Output</a>
+          <a class="nav-link" href="#item-2">Arithmetic</a>
+          <a class="nav-link" href="#item-3">Assigning Values</a>
+          <a class="nav-link" href="#item-4">Comparing Values</a>
+          <a class="nav-link" href="#item-5">Logic</a>
+          <a class="nav-link" href="#item-9">Casting Data Types</a>
+        </nav>
+      </nav>
+    </div>
+
+    <div class="col-md-8">
+      <div data-bs-spy="scroll" data-bs-target="#navbar-example3" data-bs-offset="0" tabindex="0">
+
+        <h4 id="item-1">Input/Output</h4>
+        <p>Just as a data value can be assigned to a variable in a Python
+          script, a user-specified value can be assigned to a variable with
+          the Python input() function. This accepts a string within its
+          parentheses that will prompt the user for input by displaying that
+          string then wait to read a line of input. User input is read as a text string, even when it’s numeric, and can
+          be assigned to a variable using the = assignment operator as usual.
+          The value assigned to any variable can be displayed by specifying
+          the variable name to the print() function – to reference that
+          variables stored value.</p>
+          <div style="background-color:black; width:20em;">
+          <codeSample>print 'Enter your name:' <br>
+                      x = input() <br>
+                      print 'Hello, ' + x</codeSample>
+          </div>
+          <div style="background-color:black; border-top: 3px solid rgb(136, 116, 116); width:20em;">
+          <output>Enter your name: <br>
+                  Bob <br>
+                  Hello, Bob</output>
+          </div>
+
+        <h4 id="item-2">Arithmetic</h4>
+        <p>Arithmetic is done is Python via the standard operators. The usual
+          +, -, *, and / are used for addition, subtraction, multiplication, and
+          division respectively. Also note that Python follows the standard order
+          of operations. So multiplication and division always happens first, unless
+          specified otherwise by parentheses.</p>
+          <div style="background-color:black; width:20em;">
+          <codeSample>x = 4 <br>
+                      y = 8 <br>
+                      z = 2 <br>
+                      print x+y/z</codeSample>
+          </div>
+          <div style="background-color:black; border-top: 3px solid rgb(136, 116, 116); width:20em;">
+          <output>8</output>
+          </div>
+
+        <h4 id="item-3">Assigning Values</h4>
+        <p>In Python, there is no need to declare what data type a variable will
+          be while assigning it. Instead, Python uses context to determine what
+          the variable should be treated as.</p>
+          <div style="background-color:black; width:30em;">
+          <codeSample>x = 24              #This variable is an int <br>
+                      y = "Hello World!"  #This variable is a string  </codeSample>
+          </div>
+
+        <h4 id="item-4">Comparing Values</h4>
+        <p>If you're familiar with any other common programming language, then this
+          should be familiar to you. Python has the standard comparison operators of
+          == and != for equal and not equal, < and > for less than and greater than,
+          and <= and >= for less than or equal to and greater than or equal to.</p>
+          <div style="background-color:black; width:20em;">
+          <codeSample>x = 5 <br>
+                      print x == 6 <br>
+                      print x != 6<br>
+                      print x < 3 <br>
+                      print x > 4 <br>
+                      print x <= 6 <br>
+                      print x >= 5 </codeSample>
+          </div>
+          <div style="background-color:black; border-top: 3px solid rgb(136, 116, 116); width:20em;">
+          <output>False <br>
+                  True <br>
+                  False <br>
+                  True <br>
+                  True <br>
+                  True </output>
+          </div>
+
+        <h4 id="item-5">Logic</h4>
+        <p>Python has 3 logical operators. These operators are 'and', 'or', and 'not'.
+          When given two boolean values, the 'and' operator will return true if and only
+          if both are true. The 'or' operator will return true if at least one of the two
+          values given to it is true. Lastly, the 'not' operator functions as an inverter.
+          The 'not' operator takes only one boolean value and then returns the opposite of
+          what it's given. So if you give it true, it will return false, and vice versa.</p>
+          <div style="background-color:black; width:20em;">
+          <codeSample>print True and False <br>
+                      print True or False <br>
+                      print not(True) </codeSample>
+          </div>
+          <div style="background-color:black; border-top: 3px solid rgb(136, 116, 116); width:20em;">
+          <output>False <br>
+                  True <br>
+                  False </output>
+          </div>
+
+        <h4 id="item-9">Casting Data Types</h4>
+        <p>As stated previously, Python does not require you to declare what data type a
+        variable will be upon initialization. Of course, this means that sometimes a variable
+        may get set to some data type other than the one you need. To get around this problem,
+        we can cast variables. If you're not familiar with the term, casting a variable means
+        to have the program treat a variable of one data type as if it were some other data type.
+        There are as many casts as there are data types, but for now, you only need to know three.
+        Use "str(x)" to cast to a string. Use "int(x)" to cast to an integer. And use "float(x)" to
+        cast to a decimal number.</p>
+          <div style="background-color:black; width:20em;">
+          <codeSample>x = "3" <br>
+                      y = "5" <br>
+                      <br>
+                      a = x + y <br>
+                      b = int(x) + int(y) <br>
+                      <br>
+                      print a <br>
+                      print b</codeSample>
+          </div>
+          <div style="background-color:black; border-top: 3px solid rgb(136, 116, 116); width:20em;">
+          <output>35 <br>
+                  8</output>
+          </div>
+
+      </div>
+      </div>
+
+    </div>
+
+   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/js/bootstrap.min.js" integrity="sha384-PsUw7Xwds7x08Ew3exXhqzbhuEYmA2xnwc8BuD6SEr+UmEHlX8/MCltYEodzWA4u" crossorigin="anonymous"></script>
+
+     </body>
+  </html>

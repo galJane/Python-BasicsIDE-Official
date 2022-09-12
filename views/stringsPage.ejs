@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= pageTitle %></title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-uWxY/CJNBR+1zjPWmfnSnVxwRheevXITnMqoEIeG1LJrdI0GlVs/9cVSyPYXdcSF" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-kQtW33rZJAHjgefvhyyzcGF3C5TFyBQBA13V1RKPf4uH+bwyzQxZ6CmMZHmNBEfJ" crossorigin="anonymous"></script>
+    
+<link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+
+    <div class="row">
+
+      <div class="col-md-3">
+    <nav id="navbar-example3" class="navbar navbar-light bg-light flex-column align-items-stretch p-3" style="position:fixed; top:0px; left:0px;">
+      <a class="navbar-brand" href="#">Strings</a>
+      <nav class="nav flex-column">
+        <a class="nav-link" href="#item-2">Formatting Strings</a>
+        <a class="nav-link" href="#item-3">Slicing Strings</a>
+        <a class="nav-link" href="#item-4">Adjusting Case</a>
+        <a class="nav-link" href="#item-5">Converting Strings</a>
+      </nav>
+    </nav>
+  </div>
+
+  <div class="col-md-8">
+    <div data-bs-spy="scroll" data-bs-target="#navbar-example3" data-bs-offset="0" tabindex="0">
+
+      <h4 id="item-2">Formatting Strings</h4>
+      <p>Strings in Python can be formatted with the use a of very versatile
+      method called format. This function is most easily understood once seen in action,
+      but to at least try to explain it, the format method allows you to create a template
+      for your strings, with special rules on key parts of it.</p>
+        <div style="background-color:black; width:50em;">
+        <codeSample>a = "The string {:12} has had 12 spaces reserved for it." <br>
+        print a.format("test") <br>
+        b = "The string {:>12} has been right-aligned." <br>
+        print b.format("test") <br>
+        c = "The string {:^12} has been centered." <br>
+        print c.format("test") <br>
+        d = "The number {:d} has been represented in decimal format." <br>
+        print d.format(12) <br>
+        e = "The number {:.2f} has been represented in fixed point format." <br>
+        print e.format(12)</codeSample>
+        </div>
+        <div style="background-color:black; border-top: 3px solid rgb(136, 116, 116); width:50em;">
+        <output>The string test________ has had 12 spaces reserved for it. <br>
+        The string ________test has been right-aligned. <br>
+        The string ____test____ has been centered. <br>
+        The number 12 has been represented in decimal format. <br>
+        The number 12.00 has been represented in fixed point format.</output>
+        </div>
+
+      <h4 id="item-3">Slicing Strings</h4>
+      <p>By using brackets, you can print out only a specified portion of a string,
+      rather than the entire string.</p>
+        <div style="background-color:black; width:20em;">
+        <codeSample>word = "Hello World" <br>
+        print word[0] <br>
+        print word[0:1] <br>
+        print word[0:3] <br>
+        print word[:3] <br>
+        print word[-3:] <br>
+        print word[3:] <br>
+        print word[:-3]</codeSample>
+        </div>
+        <div style="background-color:black; border-top: 3px solid rgb(136, 116, 116); width:20em;">
+        <output>H <br>
+        H <br>
+        Hel <br>
+        Hel <br>
+        rld <br>
+        lo World <br>
+        Hello Wo</output>
+        </div>
+
+      <h4 id="item-4">Adjusting Case</h4>
+      <p>There are various functions available to allow you to adjust the
+      capitalization of strings.</p>
+        <div style="background-color:black; width:30em;">
+        <codeSample>string = "Hey! You and I should go." <br>
+        print string.upper() <br>
+        print string.lower() <br>
+        print string.title() <br>
+        print string.capitalize() <br>
+        print string.swapcase()</codeSample>
+        </div>
+        <div style="background-color:black; border-top: 3px solid rgb(136, 116, 116); width:30em;">
+        <output>HEY! YOU AND I SHOULD GO. <br>
+        hey! you and i should go. <br>
+        Hey! You And I Should Go. <br>
+        Hey! you and i should go. <br>
+        hEY! yOU AND i SHOULD GO.</output>
+        </div>
+
+      <h4 id="item-5">Converting Strings</h4>
+      <p>If you need to have a string be represented as a different data type,
+      all you need to do is cast it to that type. However, make sure the string
+      you are casting matches with the format of the type you are trying to cast it to.</p>
+        <div style="background-color:black; width:20em;">
+        <codeSample>x = "8" <br>
+        z = 7 + int(x) <br>
+        print z</codeSample>
+        </div>
+        <div style="background-color:black; border-top: 3px solid rgb(136, 116, 116); width:20em;">
+        <output>15</output>
+        </div>
+      
+    </div>
+    </div>
+
+  </div>
+
+ <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/js/bootstrap.min.js" integrity="sha384-PsUw7Xwds7x08Ew3exXhqzbhuEYmA2xnwc8BuD6SEr+UmEHlX8/MCltYEodzWA4u" crossorigin="anonymous"></script>
+  
+   </body>
+</html>
